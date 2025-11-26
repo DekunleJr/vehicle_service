@@ -15,6 +15,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(prepend: [
             \App\Http\Middleware\LogApiCallsMiddleware::class,
         ]);
+
+        $middleware->web(append: [
+            \App\Http\Middleware\LogApiCallsMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
