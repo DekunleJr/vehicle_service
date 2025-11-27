@@ -20,6 +20,14 @@ class AppServiceProvider extends ServiceProvider
             'App\Interfaces\MoveInterface',
             'App\Repository\MoveRepository'
         );
+        $this->app->bind(
+            'App\Interfaces\PostInterface',
+            'App\Repository\PostRepository'
+        );
+        $this->app->bind(
+            'App\Interfaces\CommentInterface',
+            'App\Repository\CommentRepository'
+        );
     }
 
     /**
