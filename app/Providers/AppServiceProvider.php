@@ -28,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
             'App\Interfaces\CommentInterface',
             'App\Repository\CommentRepository'
         );
+        $this->app->bind(
+            'App\Interfaces\LikeInterface',
+            'App\Repository\LikeRepository'
+        );
     }
 
     /**

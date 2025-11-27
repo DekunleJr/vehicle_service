@@ -6,6 +6,7 @@ use App\Http\Controllers\EngineController;
 use App\Http\Controllers\MoveController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 
 
 Route::get('/user', function (Request $request) {
@@ -35,3 +36,6 @@ Route::get('/comments', [CommentController::class, 'getComments']);
 Route::get('/comments/{id}', [CommentController::class, 'getComment']);
 Route::put('/comments/update/{id}', [CommentController::class, 'updateComment']);
 Route::delete('/comments/delete/{id}', [CommentController::class, 'deleteComment']);
+
+Route::post('/like/{id}', [LikeController::class, 'like']);
+Route::delete('/unlike/{id}', [LikeController::class, 'unlike']);

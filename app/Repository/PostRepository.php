@@ -29,7 +29,7 @@ class PostRepository implements PostInterface
         $newAction->user_action = $message;
         $newAction->save();
 
-        return Post::with('comments')->find($id);
+        return Post::with('comments', 'likes')->find($id);
     }
 
     public function getPosts(): array
